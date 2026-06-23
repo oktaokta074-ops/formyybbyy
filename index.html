@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday Arinaa ✨</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- LAYER 1: WELCOME & PASSWORD -->
+  <div id="layer-password" class="card">
+    <div class="emoji animation-float">🦈🤍</div>
+    <h2>welcome to my secret place</h2>
+    <p>please enter ur password (pake angka ya)</p>
+    <div class="password-box">
+      <input type="password" id="password-input" placeholder="•••••" maxlength="5">
+    </div>
+    <button onclick="checkPassword()">Open 💙</button>
+  </div>
+
+  <!-- LAYER 2: COUNTDOWN TIME -->
+  <div id="layer-countdown" class="card hidden">
+    <h2>waktu berlalu dengan cepat, but i'm so grateful to meet you.</h2>
+    <p>umur kamu sekarangg sayangkuu</p>
+    
+    <div class="countdown-container">
+      <div class="time-box"><span id="days">00</span><p>DAYS</p></div>
+      <div class="time-box"><span id="hours">00</span><p>HOURS</p></div>
+      <div class="time-box"><span id="minutes">00</span><p>MINS</p></div>
+      <div class="time-box"><span id="seconds">00</span><p>SECS</p></div>
+    </div>
+    
+    <button onclick="nextLayer('layer-countdown', 'layer-menu')">Next →</button>
+  </div>
+
+  <!-- LAYER 3: MAIN MENU (4 KOTAK) -->
+  <div id="layer-menu" class="card hidden">
+    <h3>these are for you ✨</h3>
+    <p>a few little things made with love, wrapped in ribbon bows just for your special day.</p>
+    
+    <div class="menu-grid">
+      <div class="menu-item" onclick="openFeature('menu-gallery')">
+        <span class="icon">📸</span>
+        <h4>Camera</h4>
+        <p>open your sweet photo booth gallery.</p>
+      </div>
+      <div class="menu-item" onclick="openFeature('menu-song')">
+        <span class="icon">🎵</span>
+        <h4>Song</h4>
+        <p>play your special song.</p>
+      </div>
+      <div class="menu-item" onclick="openFeature('menu-letter')">
+        <span class="icon">💌</span>
+        <h4>A Letter</h4>
+        <p>open a lovely envelope and read a message.</p>
+      </div>
+      <div class="menu-item" onclick="openFeature('menu-present')">
+        <span class="icon">🎁</span>
+        <h4>Present</h4>
+        <p>it is time to open your present.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SUB-LAYER: GALLERY -->
+  <div id="menu-gallery" class="card hidden">
+    <button class="btn-back" onclick="backToMenu('menu-gallery')">← Back to Menu</button>
+    <h3>the prettiest in da worlldd!</h3>
+    <div class="gallery-grid">
+      
+      <div class="photo-card"><img src="https://placehold.co/150x200" alt="Foto 1"><p>her sweetest smile</p></div>
+      <div class="photo-card"><img src="https://placehold.co/150x200" alt="Foto 2"><p>soft heart, pretty soul</p></div>
+      <div class="photo-card"><img src="https://placehold.co/150x200" alt="Foto 3"><p>pretty without trying</p></div>
+      <div class="photo-card"><img src="https://placehold.co/150x200" alt="Foto 4"><p>my forever favorite view</p></div>
+    </div>
+  </div>
+
+  <!-- SUB-LAYER: SONG -->
+  <div id="menu-song" class="card hidden">
+    <button class="btn-back" onclick="backToMenu('menu-song')">← Kembali ke Menu</button>
+    <h3>for your ears 🌊</h3>
+    <p>this song always remind me for u.</p>
+    <div class="music-box">
+      
+      <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/5mtTAScDytxMMqZj14NmlN?si=Nlx3c-BVRvyXznTjURWMPg" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    </div>
+  </div>
+
+  <!-- SUB-LAYER: LETTER -->
+  <div id="menu-letter" class="card hidden">
+    <button class="btn-back" onclick="backToMenu('menu-letter')">← Back</button>
+    <h3>private letter 🤍</h3>
+    <div class="envelope" onclick="toggleLetter()">
+      <div class="envelope-heart">💖</div>
+      <p style="font-size: 0.8rem; margin-top: 10px;">tap to open envelope</p>
+    </div>
+    <div id="letter-content" class="letter-text hidden">
+  <p><b>Happy bdayy to the most important person in my life!</b></p>
+  
+  <p>Gaa kerasaa udah 16 tahun ajaa kam. wishing you all the absolute best things in life, semoga apa yang kamu semogakan bisa tercapai, dan kamu selalu bahagia terus setiap harinya yaa sayangkuu.</p>
+  
+  <p>I just wanna say, even though the distance feels so real right now, my feelings for you will never change. aku bakal kangen banget sama kamm. i’m gonna miss everything about us, miss our random talks, and miss having u around.</p>
+  
+  <p>But hey, we can get through this, right? makasih ya udah selalu ada buat akuu, rinn. happy 16th, sayangkuu. enjoy ur special day, and remember that im always here supporting you from afar. i miss you already! 🤍</p>
+</div>
+  </div>
+
+  <!-- SUB-LAYER: PRESENT -->
+  <div id="menu-present" class="card hidden">
+    <button class="btn-back" onclick="backToMenu('menu-present')">← Back</button>
+    <h3>special present 🎁</h3>
+    <div class="gift-box" onclick="openGift()">
+      <div class="gift-emoji animation-float">🎁</div>
+      <p id="gift-hint">tap to open your gift!</p>
+    </div>
+    <div id="gift-result" class="hidden">
+      <!-- Bisa diganti link gambar kue ultah atau buket bunga imut -->
+      <img src="https://cdn-icons-png.flaticon.com/512/4141/4141977.png" width="120" alt="Cake">
+      <p class="love-text">Happy Birthday! Wishing you a beautiful day ahead. You deserve the absolute best, today and always. 🎂✨</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
