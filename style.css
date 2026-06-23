@@ -8,8 +8,9 @@ body {
   margin: 0;
   padding: 20px;
   box-sizing: border-box;
-  overflow-x: hidden;
+  overflow: hidden; /* Mengunci layar agar tidak bisa digeser ke kanan/kiri */
   position: relative;
+  width: 100vw; /* Lebar pas seukuran layar HP */
 }
 
 /* Efek Elemen Terbang Tersebar seperti di Video */
@@ -27,6 +28,7 @@ body::before {
   align-items: center;
   flex-wrap: wrap;
   pointer-events: none;
+  overflow: hidden; /* Memotong emoji yang keluar dari batas layar */
   animation: floatingElements 6s ease-in-out infinite alternate;
 }
 
@@ -43,6 +45,8 @@ body::before {
   border: none;
   box-sizing: border-box;
   animation: fadeIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  z-index: 2;
 }
 
 .hidden { display: none !important; }
@@ -91,14 +95,14 @@ button:hover {
 
 .btn-back {
   background: none;
-  color: #b5e2fa;
+  color: #a3c4f3;
   font-size: 0.85rem;
   padding: 0;
   margin: 0 0 20px 0;
   float: left;
   box-shadow: none;
 }
-.btn-back:hover { transform: none; background: none; color: #90e0ef; text-decoration: underline; box-shadow: none; }
+.btn-back:hover { transform: none; background: none; color: #ffb5a7; text-decoration: underline; box-shadow: none; }
 
 .countdown-container {
   display: flex;
